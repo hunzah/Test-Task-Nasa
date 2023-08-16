@@ -1,12 +1,12 @@
 import styles from './styles/home.module.css'
-
+import {Main} from '@/app/components/main/Main';
 
 
 export default function Home() {
     return (
         <>
             <div className={styles.container}>
-                <div className={styles.titleContainer} >
+                <div className={styles.titleContainer}>
                     <h1 className={styles.title}>ARMAGEDDON 2023</h1>
                     <div>ООО “Команда им. Б. Уиллиса”.</div>
                     <div>Взрываем астероиды с 1998 года.</div>
