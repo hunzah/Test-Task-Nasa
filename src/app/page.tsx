@@ -12,7 +12,7 @@ export default function Home() {
                     <div>Взрываем астероиды с 1998 года.</div>
                 </div>
                 <Main/>
-                <div className={styles.bgColor}>
+                <div className={styles.bg}>
                 </div>
             </div>
         </>
