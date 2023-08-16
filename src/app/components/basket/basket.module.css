@@ -1,0 +1,14 @@
+.container{
+    position: fixed;
+    top: 250px;
+    right: 350px;
+    background-color: var(--basket-bg);
+    display: flex;
+    width: 150px;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    row-gap: 32px;
+    flex-wrap: wrap;
+}

@@ -8,9 +8,10 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-    --orange-base: #F86600;
+    --orange-base: #f86600;
     --white-base: #FFF;
     --black: #000;
+    --basket-bg: #232526;
 
 
     color: var(--white-base, #FFF);
