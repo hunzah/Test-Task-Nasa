@@ -1,0 +1,18 @@
+.bgColor {
+    background-image: url("../../../public/planeta-zemlya.jpg");
+    position: absolute;
+
+    top: 200px;
+    width: 30vw;
+    height: 30vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 50px;
+}
+.title{
+    font-family: 'Passion One', cursive;
+}
+.container {
+    position: fixed;
+}
