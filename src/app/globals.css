@@ -10,8 +10,10 @@
 
     --orange-base: #F86600;
     --white-base: #FFF;
-    color: var(--white-base, #FFF);
     --black: #000;
+
+
+    color: var(--white-base, #FFF);
     background: var(--black, #000);
 
 }
