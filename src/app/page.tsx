@@ -3,6 +3,7 @@ import {Main} from '@/app/components/main/Main';
 
 
 export default function Home() {
+    console.log('Home')
     return (
         <>
             <div className={styles.container}>
