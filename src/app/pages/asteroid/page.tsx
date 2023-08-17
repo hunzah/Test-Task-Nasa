@@ -1,4 +1,4 @@
-import styles from '../../asteroid.module.css'
+import styles from './asteroid.module.css'
 import Button from '@/app/assets/Button';
 
 

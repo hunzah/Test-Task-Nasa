@@ -1,7 +1,7 @@
 .bg {
     background-image: url("../../../public/planeta-zemlya.jpg");
 
-    position: relative;
+    position: fixed;
     width: 43vw;
     height: 37vw;
     left: -100px;
