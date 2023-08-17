@@ -1,9 +1,13 @@
+'use client'
+
 import styles from './styles/home.module.css'
-import {Main} from '@/app/components/main/Main';
+import {Main} from './components/main/Main';
+
+
 
 
 export default function Home() {
-    console.log('Home')
+
     return (
         <>
             <div className={styles.container}>
@@ -19,3 +23,6 @@ export default function Home() {
         </>
     )
 }
+
+
+

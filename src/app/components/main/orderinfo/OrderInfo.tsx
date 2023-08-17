@@ -9,17 +9,18 @@ import {getAsteroidsData} from '@/app/api/nasaApi';
 
 
 
-console.log('scs')
+
+
 
 export const OrderInfo = async () => {
 
 
 const data = await getAsteroidsData()
-debugger
+
     return (
         <div className={styles.container}>
             <div className={styles.date}>
-                 sazdfvaszdvd
+                {data}sazdfvaszdvd
             </div>
             <div className={styles.info}>
                 <span className={styles.distance}></span>

@@ -1,23 +1,22 @@
-
 const settings = {
     baseURL: 'https://api.nasa.gov/neo/rest/v1/feed',
     withCredentials: true,
-    headers: {
-        'API-KEY': '6d618c5c-24f1-48e7-9694-a9a2e7863199'
-    }
+    apiKey: 'ewEjeYg1fSccJrOFjFKQ0n09geNidFYqa6btKU43'
+
 }
 
+const startDate = '2015-09-07';
+const endDate = '2015-09-12';
 
+const apiUrl = `${settings.baseURL}?start_date=${startDate}&end_date=${endDate}&api_key=${settings.apiKey}`;
 
-
-export const getAsteroidsData = async ():Promise<any> => {
-    debugger
+export async function getAsteroidsData() {
     try {
-        const response = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2018-09-08&6d618c5c-24f1-48e7-9694-a9a2e7863199`);
+        const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return await response.json()
+        return await response.json();
     } catch (error) {
         console.error('Error fetching data:', error);
     }

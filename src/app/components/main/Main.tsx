@@ -3,8 +3,10 @@ import styles from './main.module.css'
 import {Basket} from '@/app/components/basket/Basket';
 import {OrderInfo} from '@/app/components/main/orderinfo/OrderInfo';
 
+
+
+
 export const Main = () => {
-    console.log('Main')
     return (
         <div className={styles.container}>
             <h3 className={styles.title}>Ближайшие подлёты астероидов</h3>
