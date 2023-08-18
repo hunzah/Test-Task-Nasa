@@ -1,38 +1,44 @@
-.container{
-    width:50px;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
-.date{
+.date {
 
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
 }
 
 
-
-.info{
-
-}
-
-
-
-.distanceKm{
-
-}
-
-.bigAsteroidImg{
-
-}
-
-.smallAsteroidImg{
+.info {
 
 }
 
 
+.distanceKm {
 
-.distanceFq{
+}
+
+.bigAsteroidImg {
+    width: 36px;
+    height: 40px;
+}
+
+.smallAsteroidImg {
+    width: 22px;
+    height: 24px;
+}
+
+
+.distance {
 
 }
 
 
-.stoneSize{
+.stoneSize {
 
 }

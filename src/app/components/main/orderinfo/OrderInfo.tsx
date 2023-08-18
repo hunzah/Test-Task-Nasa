@@ -16,36 +16,44 @@ export const OrderInfo = async () => {
     const asteroidItems = [];
 
 
-    console.log(data.near_earth_objects['2023-08-18'].map(el => el.is_potentially_hazardous_asteroid[0]))
+    // console.log(data.near_earth_objects['2023-08-18'].map(el => el.is_potentially_hazardous_asteroid))
 
 
     // Перебираем астероиды и создаем элементы разметки для каждого
     for (const date in data.near_earth_objects) {
         const asteroids = data.near_earth_objects[date];
         asteroids.forEach(asteroid => {
+
+            const lunarOrbits = Math.floor(Number(asteroid.close_approach_data[0].miss_distance.lunar));
+            const lunarOrbitsText = lunarOrbits > 4 ? 'лунных орбит' : 'лунные орбиты';
+
             const asteroidMarkup = (
-                <div key={asteroid.id} className={styles.info}>
+                <>
                     <span
-                        className={styles.distanceKm}> {formatDate(asteroid.close_approach_data[0].close_approach_date)} </span>
-
-
-                    {asteroid.is_potentially_hazardous_asteroid[0] ?
-                        <img className={styles.bigAsteroidImg} src={AsteroidImg} alt={asteroid.name}/>
-                        :
-                        <img className={styles.smallAsteroidImg} src={AsteroidImg} alt={asteroid.name}/>
-                    }
-
-                    <span className={styles.distanceFq}>
-                        {Number(asteroid.close_approach_data[0].miss_distance.kilometers).toFixed(2)} км
+                        className={styles.date}> {formatDate(asteroid.close_approach_data[0].close_approach_date)}
                     </span>
 
-                    <div className={styles.stoneSize}>
-                        {Number(asteroid.close_approach_data[0].miss_distance.lunar).toFixed(2)} FQ
-                    </div>
+                    {asteroid.is_potentially_hazardous_asteroid[0] ?
+                        <img className={styles.bigAsteroidImg} src={'/stone.png'} alt={asteroid.name}/>
+                        :
+                        <img className={styles.smallAsteroidImg} src={'/stone.png'} alt={asteroid.name}/>
+                    }
+
+                    <span className={styles.distance}>
+                        {lunarOrbits} {lunarOrbitsText}
+                    </span>
+
+                    {/*<div className={styles.stoneSize}>*/}
+                    {/*    {Number(asteroid.close_approach_data[0].miss_distance.lunar).toFixed(2)} FQ*/}
+                    {/*</div>*/}
                     <div className={styles.stoneSize}>
                         {Number(asteroid.estimated_diameter.meters.estimated_diameter_min).toFixed(2)} м
                     </div>
-                </div>
+                    <Button text="заказать"/>
+                    {asteroid.is_potentially_hazardous_asteroid ? <span>⚠️Опасен</span> : <span>🕊️ Безобидный</span>}
+
+
+                </>
             );
             asteroidItems.push(asteroidMarkup);
         });
@@ -54,7 +62,6 @@ export const OrderInfo = async () => {
     return (
         <div className={styles.container}>
             {asteroidItems}
-            <Button text="заказать"/>
         </div>
     );
 };
