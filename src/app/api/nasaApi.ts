@@ -62,14 +62,15 @@ export type ResponseType = {
 
 
 const settings = {
-    baseURL: 'https://api.nasa.gov/neo/rest/v1/feed',
+    baseURL: 'https://api.nasa.gov/neo/rest/v1/',
     withCredentials: true,
     apiKey: 'ewEjeYg1fSccJrOFjFKQ0n09geNidFYqa6btKU43'
 }
 
+
 export async function getAsteroidsData(startDate, endDate): Promise<ResponseType> {
     try {
-        const apiUrl = `${settings.baseURL}?start_date=${startDate}&end_date=${endDate}&api_key=${settings.apiKey}`;
+        const apiUrl = `${settings.baseURL}feed?start_date=${startDate}&end_date=${endDate}&api_key=${settings.apiKey}`;
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('Network response was not ok');
