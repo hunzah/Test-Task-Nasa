@@ -2,6 +2,7 @@ import styles from '@/app/components/main/orderinfo/orderInfo.module.css';
 import Button from '@/app/assets/Button';
 import {getAsteroidsData} from '@/app/api/nasaApi';
 import {formatDate} from '@/app/utils/formatDate';
+import AsteroidImg from './../../../../../public/stone.png'
 
 export const OrderInfo = async () => {
     const currentDate = new Date();
@@ -15,7 +16,7 @@ export const OrderInfo = async () => {
     const asteroidItems = [];
 
 
-    console.log(data.near_earth_objects['18-08-2023'].map(el => el.))
+    console.log(data.near_earth_objects['2023-08-18'].map(el => el.is_potentially_hazardous_asteroid[0]))
 
 
     // Перебираем астероиды и создаем элементы разметки для каждого
@@ -28,10 +29,10 @@ export const OrderInfo = async () => {
                         className={styles.distanceKm}> {formatDate(asteroid.close_approach_data[0].close_approach_date)} </span>
 
 
-                    {asteroid.is_potentially_hazardous_asteroid ?
-                        <img className={styles.img} src={bigAsteroidImg} alt={asteroid.name}>
+                    {asteroid.is_potentially_hazardous_asteroid[0] ?
+                        <img className={styles.bigAsteroidImg} src={AsteroidImg} alt={asteroid.name}/>
                         :
-                        <img className={styles.img} src={smallAsteroidImg} alt={asteroid.name}>
+                        <img className={styles.smallAsteroidImg} src={AsteroidImg} alt={asteroid.name}/>
                     }
 
                     <span className={styles.distanceFq}>
