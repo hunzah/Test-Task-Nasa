@@ -14,14 +14,28 @@
 }
 
 
-.info {
+.infoContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.distanceContainer {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.distance {
 
 }
 
-
-.distanceKm {
-
+.arrowImg {
+    width: 100%;
+    height: auto;
 }
+
 
 .bigAsteroidImg {
     width: 36px;
@@ -34,11 +48,22 @@
 }
 
 
-.distance {
-
+.diamContainer {
+    display: flex;
+    flex-direction: column;
 }
 
+.fq {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration-line: underline;
+}
 
 .stoneSize {
-
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
 }
