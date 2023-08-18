@@ -10,14 +10,17 @@ export const OrderInfo = async () => {
 
     const data = await getAsteroidsData(startDate, endDate.toISOString().split('T')[0]);
 
-console.log(data.near_earth_objects['2023-08-17'].map(el=>el.close_approach_data.map(el=>el.miss_distance)))
+
+    const info = data.near_earth_objects['2023-08-18'].map(el=>el)
+
+
     return (
         <div className={styles.container}>
-            {data.near_earth_objects['2023-08-17'].map(el => (
-                <div key={el.id} className={styles.date}>
-                    <p>Date: {el.close_approach_data[0].close_approach_date}</p>
+
+                <div >
                 </div>
-            ))}
+
+
             <div className={styles.info}>
                 <span className={styles.distance}></span>
                 <img className={styles.img}/>
