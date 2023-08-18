@@ -34,7 +34,7 @@ export const OrderInfo = async () => {
             const lunarOrbitsText = lunarOrbits > 4 ? 'лунных орбит' : 'лунные орбиты';
 
             const asteroidMarkup = (
-                <>
+                <div key={asteroid.id}>
                     <span
                         className={styles.date}> {formatDate(asteroid.close_approach_data[0].close_approach_date)}
                     </span>
@@ -65,7 +65,7 @@ export const OrderInfo = async () => {
                     {asteroid.is_potentially_hazardous_asteroid ? <span>⚠️Опасен</span> : <span>🕊️ Безобидный</span>}
 
 
-               </>
+               </div>
             );
             asteroidItems.push(asteroidMarkup);
         });

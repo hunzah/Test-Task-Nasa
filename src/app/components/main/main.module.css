@@ -9,20 +9,27 @@
 }
 
 .title {
-    color: var(--white-base);
+    color: var(--text-color);
     font-size: 28px;
     font-weight: 700;
     line-height: 36px;
 }
-
-.text {
-    color: var(--white-base);
-    font-size: 16px;
-    /*font-style: normal;*/
-    font-weight: 700;
-    /*line-height: 24px;*/
+.clickableTextContainer {
+    display: flex;
+    gap: 8px;
 }
-.text2 {
+.clickableText {
+
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+.clickableText:hover {
+
+}
+
+
+.active {
     font-weight: 400;
     text-decoration-line: underline;
 }
