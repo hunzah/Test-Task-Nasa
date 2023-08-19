@@ -1,10 +1,10 @@
-'use client'
+
 import React, {useState} from 'react';
 import styles from './main.module.css'
 import {Basket} from '@/app/components/basket/Basket';
 import {OrderInfo} from '@/app/components/main/orderinfo/OrderInfo';
 
-
+'use client'
 export const Main = () => {
     const [toggle, setToggle] = useState(false)
 
